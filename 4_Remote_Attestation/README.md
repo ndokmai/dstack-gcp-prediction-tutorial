@@ -1,4 +1,4 @@
-<img width="159" height="26" alt="image" src="https://github.com/user-attachments/assets/622bf252-70ca-489a-8089-5286eaedf018" /># Authenticate a TDX server with RA-TLS
+# Authenticate a TDX server with RA-TLS
 
 In [module 3](../3_Deploy_TDX/README.md), the callers trusted a pre-generated server certificate. Now the model owner and prediction client will **verify the running deployment before sending private data**.
 
