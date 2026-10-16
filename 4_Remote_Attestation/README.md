@@ -1,4 +1,4 @@
-# Authenticate a TDX server with RA-TLS
+<img width="159" height="26" alt="image" src="https://github.com/user-attachments/assets/622bf252-70ca-489a-8089-5286eaedf018" /># Authenticate a TDX server with RA-TLS
 
 In [module 3](../3_Deploy_TDX/README.md), the callers trusted a pre-generated server certificate. Now the model owner and prediction client will **verify the running deployment before sending private data**.
 
@@ -26,7 +26,6 @@ A valid signature authenticates the evidence. The caller's **policy** decides wh
 
 | Question | What our verifier checks |
 | -------- | ------------------------ |
-
 | Is the platform evidence authentic and acceptable?                | Intel and Google signatures and certificate chains, revocation information, and platform security status. |
 | Does the guest boot state match our approved release?             | The checked firmware measurement and Unified Kernel Image (UKI) boot executable hash.                     |
 | Does the application configuration match our approved deployment? | The measured Compose hash, which commits to the pinned Docker image reference and launch settings.        |
@@ -75,7 +74,7 @@ sequenceDiagram
     end
     box Server VM on GCP
         participant S as Server container (TLS + Flask)
-        participant A as dstack OS guest agent
+        participant A as dstack OS guest agent (/var/run/dstack.sock)
     end
 
     Note over S,A: At server startup
