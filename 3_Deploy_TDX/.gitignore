@@ -1,0 +1,40 @@
+# dstack-cloud new/prepare/deploy output: the tutorial creates its project here.
+app/
+# Also exclude local CLI state/boot payloads if another project name is used.
+state.json
+.user-config
+shared/
+.dstack/
+# Protect against accidentally generating the project directly in this module.
+# Keep docker-compose.yaml.example (the source template) eligible for Git.
+/app.json
+/docker-compose.yaml
+/prelaunch.sh
+# Downloaded OS images and disk packaging output, if stored inside the module.
+images/
+image-build.json
+*.tar.gz
+*.raw
+# Fresh local identities are never distributed through Git.
+*.key
+*.crt
+*.pem
+*.cert
+*.cer
+*.csr
+*.der
+*.pub
+*.p12
+*.pfx
+*.jks
+*.keystore
+.venv/
+__pycache__/
+*.py[cod]
+.uv-cache/
+.pytest_cache/
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample

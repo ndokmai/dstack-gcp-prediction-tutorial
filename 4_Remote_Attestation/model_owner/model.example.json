@@ -1,0 +1,8 @@
+{
+  "bias": 500000,
+  "weights": {
+    "area_m2": 40000,
+    "bedrooms": 200000,
+    "age_years": -15000
+  }
+}

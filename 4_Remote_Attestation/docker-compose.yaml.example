@@ -1,0 +1,15 @@
+# Inspect the new server Dockerfile before publishing; pin its approved digest here.
+services:
+  server:
+    image: docker.io/YOUR_DOCKERHUB_USERNAME/sec304-house-price@sha256:REPLACE_WITH_64_HEX_DIGEST
+    platform: linux/amd64
+    ports:
+      - '8000:8000'
+    volumes:
+      # Guest-agent access enables the app to request hardware-backed evidence.
+      # This is a privileged capability: never expose the agent socket remotely.
+      - /var/run/dstack.sock:/var/run/dstack.sock
+    tmpfs:
+      # Volatile runtime identities: no key baked into the image or fetched from IAM.
+      - /run/sec304-tls:mode=0700
+    restart: unless-stopped

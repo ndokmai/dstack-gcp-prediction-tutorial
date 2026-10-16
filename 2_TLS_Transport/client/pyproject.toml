@@ -1,0 +1,10 @@
+# Independent client environment; HTTP/JSON use Python's standard library.
+[project]
+name = "sec304-house-price-client"
+version = "0.1.0"
+description = "HTTP client for a house-price prediction service"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false

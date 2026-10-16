@@ -1,0 +1,9 @@
+# Keep all local environments, runtime identities, and owner data out of the image.
+.venv/
+__pycache__/
+*.pyc
+*.key
+*.crt
+*.pem
+.env
+.env.*

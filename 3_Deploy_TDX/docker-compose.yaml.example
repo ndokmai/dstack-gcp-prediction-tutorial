@@ -1,0 +1,18 @@
+# Copy into the CLI-created app/docker-compose.yaml and replace the image below.
+# No build: the guest pulls exactly the published module-2 TLS image.
+services:
+  server:
+    image: docker.io/YOUR_DOCKERHUB_USERNAME/sec304-house-price@sha256:REPLACE_WITH_64_HEX_DIGEST
+    platform: linux/amd64
+    ports:
+      # Guest port 8000 serves HTTPS; GCP firewall restricts it to IAP.
+      - "8000:8000"
+    secrets:
+      - tls_private_key
+    restart: unless-stopped
+
+secrets:
+  tls_private_key:
+    # This path is in the VM, not the developer's laptop.
+    # The guest startup commands retrieve the key from Google Secret Manager.
+    file: /run/sec304-tls/server.key

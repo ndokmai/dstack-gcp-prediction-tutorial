@@ -1,0 +1,13 @@
+# Independent server project; no client or model-owner dependencies.
+[project]
+name = "sec304-house-price-server"
+version = "0.1.0"
+description = "Flask prediction server with hash-checked model provisioning"
+requires-python = ">=3.12"
+dependencies = [
+    "flask",
+    "gunicorn ; sys_platform == 'linux'",
+]
+
+[tool.uv]
+package = false

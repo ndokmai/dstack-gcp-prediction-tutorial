@@ -1,0 +1,92 @@
+# SPDX-FileCopyrightText: © 2024-2025 Phala Network <dstack@phala.network>
+# SPDX-FileCopyrightText: © 2025 Created-for-a-purpose <rachitchahar@gmail.com>
+# SPDX-FileCopyrightText: © 2025 Daniel Sharifi <daniel.sharifi@nearone.org>
+#
+# SPDX-License-Identifier: Apache-2.0
+
+[workspace.package]
+version = "0.6.0"
+authors = ["Kevin Wang <wy721@qq.com>", "Leechael <Leechael@github.com>"]
+edition = "2021"
+license = "MIT"
+homepage = "https://github.com/Dstack-TEE/dstack"
+repository = "https://github.com/Dstack-TEE/dstack"
+
+[workspace]
+members = [".", "vendor/cc-eventlog", "vendor/dstack-types", "vendor/tpm-types", "vendor/tpm-qvl", "vendor/size-parser", "vendor/crates/pki-fetch"]
+resolver = "2"
+
+[workspace.dependencies]
+pki-fetch = { path = "vendor/crates/pki-fetch" }
+cc-eventlog = { path = "vendor/cc-eventlog" }
+tpm-types = { path = "vendor/tpm-types" }
+tpm-qvl = { path = "vendor/tpm-qvl" }
+dstack-types = { path = "vendor/dstack-types" }
+size-parser = { path = "vendor/size-parser" }
+anyhow = { version = "1.0.97", default-features = false }
+or-panic = { version = "1.0", default-features = false }
+fs-err = "3.1.0"
+tracing = "0.1.40"
+base64 = "0.22.1"
+hex = { version = "0.4.3", default-features = false }
+hex-literal = "1.0.0"
+scale = { version = "3.7.4", package = "parity-scale-codec", features = [
+    "derive",
+] }
+serde = { version = "1.0.228", features = ["derive"], default-features = false }
+serde-human-bytes = "0.1.2"
+serde_with = "3.14.0"
+serde_jcs = "0.2.0"
+serde_json = { version = "1.0.140", default-features = false }
+nom = "7.1"
+ciborium = "0.2"
+
+# Networking/HTTP
+reqwest = { version = "0.13.4", default-features = false, features = [
+    "json",
+    "query",
+    "rustls",
+    "charset",
+    "hickory-dns",
+] }
+tokio = { version = "1.46.1" }
+dcap-qvl = "=0.5.3"
+dcap-qvl-webpki = "0.103.4"
+p256 = "0.13.2"
+rsa = "0.9"
+rustls-pki-types = "1.13.1"
+sha2 = { version = "0.10.8", default-features = false }
+sha3 = "0.10.8"
+ez-hash = "1.1.0"
+
+# Certificate/DNS
+pem = "3.0"
+x509-parser = "0.16.0"
+insta = "1.42.2"
+thiserror = "2.0.12"
+[profile.release]
+panic = "abort"
+
+# Local, GCP-only adaptation of the upstream verifier; see ../README.md.
+[package]
+name = "sec304-tdx-verifier"
+version = "0.1.0"
+edition = "2021"
+license = "Apache-2.0"
+
+[dependencies]
+anyhow.workspace = true
+cc-eventlog.workspace = true
+dstack-types.workspace = true
+tpm-types.workspace = true
+tpm-qvl.workspace = true
+dcap-qvl.workspace = true
+ez-hash.workspace = true
+hex.workspace = true
+hex-literal.workspace = true
+scale.workspace = true
+serde = { workspace = true, features = ["derive"] }
+serde_json = { workspace = true, features = ["std"] }
+sha2.workspace = true
+x509-parser.workspace = true
+tokio = { workspace = true, features = ["macros", "rt-multi-thread"] }

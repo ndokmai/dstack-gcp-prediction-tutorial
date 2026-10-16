@@ -1,0 +1,10 @@
+# Generated cloud configuration and public local test artifacts.
+/app/
+/policy.json
+/reference/
+/results/
+/image-build.json
+/images/
+/evidence/
+# The vendored Google production root is a public trust anchor, not a generated identity.
+!verifier/vendor/tpm-qvl/certs/gcp-root-ca.pem

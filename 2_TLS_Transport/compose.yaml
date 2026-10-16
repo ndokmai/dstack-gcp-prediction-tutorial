@@ -1,0 +1,18 @@
+# Local HTTPS only: no registry publication and no TEE yet.
+services:
+  server:
+    build:
+      context: ./server
+      platforms:
+        - linux/amd64
+    image: sec304-house-price:tls-local
+    platform: linux/amd64
+    ports:
+      - "127.0.0.1:18043:8000"
+    secrets:
+      - tls_private_key
+
+secrets:
+  tls_private_key:
+    # This is a file path, not the secret value. Compose mounts it at runtime.
+    file: ${TLS_PRIVATE_KEY_FILE:?Set TLS_PRIVATE_KEY_FILE to the private key path}

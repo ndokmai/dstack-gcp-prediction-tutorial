@@ -1,0 +1,23 @@
+# Each reader generates a fresh TLS identity; neither certificates nor keys
+# are tracked. Public certificates still enter the local Docker build context.
+/keys/
+*.key
+*.crt
+*.cert
+*.cer
+*.pem
+*.csr
+*.der
+*.pub
+*.p12
+*.pfx
+*.jks
+*.keystore
+.venv/
+__pycache__/
+.uv-cache/
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample

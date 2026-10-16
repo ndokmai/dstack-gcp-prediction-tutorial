@@ -1,0 +1,5 @@
+# Local environments and generated build metadata are not application source.
+.venv/
+__pycache__/
+.uv-cache/
+image-build.json

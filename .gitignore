@@ -1,0 +1,94 @@
+# Python bytecode, test results, and tool caches.
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.hypothesis/
+.tox/
+.nox/
+.coverage
+.coverage.*
+htmlcov/
+
+# Local Python environments and uv caches. Keep pyproject.toml and uv.lock.
+.venv/
+venv/
+.uv-cache/
+.cache/
+
+# Build output and installed dependencies. Keep Cargo.toml and Cargo.lock.
+build/
+dist/
+*.egg-info/
+target/
+node_modules/
+
+# macOS metadata and local editor/temporary files.
+.DS_Store
+._*
+.idea/
+.history/
+*.swp
+*.swo
+*.tmp
+*.bak
+*~
+
+# Local environment values; documented examples remain eligible for Git.
+.env
+.env.*
+!.env.example
+!.env.template
+!.env.sample
+
+# Generated TLS identities. Readers must generate their own matching pair.
+*.key
+*.crt
+*.cert
+*.cer
+*.pem
+*.csr
+*.der
+*.pub
+*.p12
+*.pfx
+*.jks
+*.keystore
+/2_TLS_Transport/keys/
+
+# Public diagnostic output and Docker build metadata.
+*.log
+*.stdout
+*.stderr
+image-build*.json
+
+# Downloaded guest disks and temporary cloud-image packaging.
+*.raw
+*.qcow2
+*.vmdk
+*.vhd
+*.vhdx
+*.img
+*.img.*
+*.iso
+*.tar
+*.tar.gz
+*.tgz
+.dstack/
+
+# dstack-cloud new/prepare/deploy output, not source templates.
+/3_Deploy_TDX/app/
+/3_Deploy_TDX/images/
+/4_Remote_Attestation/app/
+/4_Remote_Attestation/images/
+
+# Deployment-specific caller policy, evidence, and local test output.
+/4_Remote_Attestation/policy.json
+/4_Remote_Attestation/reference/
+/4_Remote_Attestation/results/
+/4_Remote_Attestation/evidence/
+
+# This public production trust anchor is required source data for the verifier.
+# It is not a generated application TLS certificate.
+!/4_Remote_Attestation/verifier/vendor/tpm-qvl/certs/gcp-root-ca.pem

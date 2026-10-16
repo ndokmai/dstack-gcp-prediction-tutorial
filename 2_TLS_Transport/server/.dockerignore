@@ -1,0 +1,11 @@
+# Only server code enters the build context. Client/owner scripts and weights stay
+# outside the image so the owner can provision weights separately after startup.
+**
+!Dockerfile
+!.dockerignore
+!server.py
+!model.py
+!requirements.txt
+# Module 2 adds only public TLS material and its new server configuration.
+!server.crt
+!gunicorn_tls.py

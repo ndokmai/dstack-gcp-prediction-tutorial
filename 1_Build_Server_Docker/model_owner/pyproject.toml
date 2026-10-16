@@ -1,0 +1,10 @@
+# Independent model-owner environment; uploads use the standard library.
+[project]
+name = "sec304-house-price-model-owner"
+version = "0.1.0"
+description = "Model-owner client for provisioning private coefficients"
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false
