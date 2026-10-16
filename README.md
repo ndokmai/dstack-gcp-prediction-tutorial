@@ -1,4 +1,4 @@
-# SEC 304 Assignment 3: Confidential Computing with Intel TDX
+# Assignment 3: Deploying A TDX Application
 
 Build a small prediction service, protect its communication with TLS, and deploy it inside an Intel TDX confidential virtual machine on Google Cloud. Finally, verify the server's attestation evidence locally before sending private data.
 
