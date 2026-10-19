@@ -48,7 +48,6 @@ The caller also needs **collateral**: supporting certificates, revocation lists,
 
 | Service | Material and trust root |
 | ------- | ----------------------- |
-
 | **Phala PCCS**          | A Provisioning Certificate Caching Service. It caches Intel-issued collateral, including Trusted Computing Base (TCB) security-version information and quoting-enclave identity. The verifier authenticates it under its trusted Intel root. |
 | **Google PKI services** | Supply issuer certificates and revocation material for the vTPM certificate chain. The verifier uses its bundled Google root.                                                                                                                |
 
